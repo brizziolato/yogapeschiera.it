@@ -1,0 +1,80 @@
+{
+  "sezioni": [
+    { "id": "banner",    "visibile": true },
+    { "id": "hero",      "visibile": true },
+    { "id": "mission",   "visibile": true },
+    { "id": "atmosfera", "visibile": true },
+    { "id": "corsi",     "visibile": true },
+    { "id": "news",      "visibile": true },
+    { "id": "team",      "visibile": true },
+    { "id": "dove",      "visibile": true },
+    { "id": "contatti",  "visibile": true }
+  ],
+
+  "corsi": [
+    {
+      "nome": "Hatha Yoga",
+      "livello": "Tutti i livelli",
+      "descrizione": "Posture, respiro e ritmi lenti. Il punto di partenza ideale se non hai mai praticato."
+    },
+    {
+      "nome": "Vinyasa Flow",
+      "livello": "Livello base–intermedio",
+      "descrizione": "Sequenze dinamiche legate al respiro. Per chi cerca movimento ed energia."
+    },
+    {
+      "nome": "Yoga Dolce",
+      "livello": "Tutti i livelli, anche over 65",
+      "descrizione": "Pratica delicata su sedia o materassino, pensata per mobilità e benessere articolare."
+    },
+    {
+      "nome": "Yoga della Sera",
+      "livello": "Tutti i livelli",
+      "descrizione": "Pensato per chi torna a casa da Milano: decompressione, respiro, rilassamento."
+    }
+  ],
+
+  "calendarioAttivo": false,
+  "calendario": [
+    { "giorno": "Lunedì", "orario": "TBD", "corso": "TBD", "luogo": "TBD" },
+    { "giorno": "Mercoledì", "orario": "TBD", "corso": "TBD", "luogo": "TBD" },
+    { "giorno": "Venerdì", "orario": "TBD", "corso": "TBD", "luogo": "TBD" }
+  ],
+
+  "news": [
+    {
+      "data": "7 giugno 2026",
+      "titolo": "Ci trovi alla Festa dello Sport di Peschiera",
+      "testo": "Passa a conoscerci di persona, proviamo insieme qualche respiro e qualche postura.",
+      "link": ""
+    }
+  ],
+
+  "team": [
+    {
+      "nome": "Valentina Pirazzoli",
+      "ruolo": "Insegnante di Haṭha Yoga",
+      "foto": "images/team/valentina_pirazzoli.jpg",
+      "bio": "Biologa con un dottorato in genetica molecolare, si è avvicinata allo yoga negli USA nel 2011. Insegnante di Haṭha Yoga formata presso la scuola Svatantra darśana (diploma CSEN 500 ore), integra lo studio dell'Haṭha, del Vinyāsa e lo Jñāna Yoga, promuovendo una pratica volta alla consapevolezza e alla trasformazione interiore."
+    },
+    {
+      "nome": "Fabrizio Lauria",
+      "ruolo": "Insegnante di Haṭha Yoga",
+      "foto": "images/team/fabrizio_lauria.jpg",
+      "bio": "Insegnante di Haṭha Yoga formatosi presso la scuola Svatantra darśana di Yoga Segrate (diploma 500 ore), proviene da un percorso multidisciplinare legato al movimento funzionale e allo sport di resistenza. Propone una pratica quotidiana focalizzata sull'Haṭha Yoga e sul Prāṇāyāma, intesa come uno strumento di progressione personale e di benessere per il corpo e per la mente."
+    }
+  ],
+
+  "luogo": {
+    "nome": "Sede corsi — TBD",
+    "indirizzo": "Via da definire, Peschiera Borromeo (MI)",
+    "note": "A pochi minuti dalla stazione, comodo per chi rientra da Milano."
+  },
+
+  "contatti": {
+    "whatsappNumero": "393336413823",
+    "whatsappTesto": "Ciao! Vorrei sapere di più sui corsi di Yoga Peschiera.",
+    "formPrenotazione": "https://docs.google.com/forms/d/e/1FAIpQLSemZoefpVUKkEkOma5wBwt4Vfkw6yA45TTPPc-WOiOQxlhSAA/viewform",
+    "email": "info@yogapeschiera.it"
+  }
+}

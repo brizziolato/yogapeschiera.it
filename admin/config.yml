@@ -1,0 +1,84 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Dove Decap salva le immagini caricate dal pannello
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Mostra un'anteprima "come si vede" quando possibile
+publish_mode: simple
+
+collections:
+  - name: "contenuti"
+    label: "Contenuti del sito"
+    files:
+      - file: "data/content.json"
+        label: "Tutti i contenuti"
+        name: "content"
+        fields:
+
+          - label: "Ordine e visibilità delle sezioni"
+            name: "sezioni"
+            widget: "list"
+            hint: "Trascina per riordinare. Spegni l'interruttore 'Visibile' per nascondere una sezione senza eliminarla."
+            fields:
+              - { label: "Sezione (non modificare questo testo)", name: "id", widget: "string" }
+              - { label: "Visibile", name: "visibile", widget: "boolean", default: true }
+
+          - label: "Corsi"
+            name: "corsi"
+            widget: "list"
+            fields:
+              - { label: "Nome del corso", name: "nome", widget: "string" }
+              - { label: "Livello", name: "livello", widget: "string" }
+              - { label: "Descrizione", name: "descrizione", widget: "text" }
+
+          - label: "Calendario definitivo? (attiva quando è pronto)"
+            name: "calendarioAttivo"
+            widget: "boolean"
+            default: false
+
+          - label: "Calendario"
+            name: "calendario"
+            widget: "list"
+            fields:
+              - { label: "Giorno", name: "giorno", widget: "string" }
+              - { label: "Orario", name: "orario", widget: "string" }
+              - { label: "Corso", name: "corso", widget: "string" }
+              - { label: "Luogo", name: "luogo", widget: "string" }
+
+          - label: "News / Eventi"
+            name: "news"
+            widget: "list"
+            fields:
+              - { label: "Data", name: "data", widget: "string" }
+              - { label: "Titolo", name: "titolo", widget: "string" }
+              - { label: "Testo", name: "testo", widget: "text" }
+              - { label: "Link (facoltativo)", name: "link", widget: "string", required: false }
+
+          - label: "Chi siamo (team)"
+            name: "team"
+            widget: "list"
+            fields:
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "Ruolo", name: "ruolo", widget: "string" }
+              - { label: "Foto", name: "foto", widget: "image" }
+              - { label: "Bio", name: "bio", widget: "text" }
+
+          - label: "Dove (sede)"
+            name: "luogo"
+            widget: "object"
+            fields:
+              - { label: "Nome sede", name: "nome", widget: "string" }
+              - { label: "Indirizzo", name: "indirizzo", widget: "string" }
+              - { label: "Nota", name: "note", widget: "text" }
+
+          - label: "Contatti"
+            name: "contatti"
+            widget: "object"
+            fields:
+              - { label: "Numero WhatsApp (senza + né spazi, es. 393336413823)", name: "whatsappNumero", widget: "string" }
+              - { label: "Messaggio precompilato WhatsApp", name: "whatsappTesto", widget: "text" }
+              - { label: "Link al form di prenotazione", name: "formPrenotazione", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
