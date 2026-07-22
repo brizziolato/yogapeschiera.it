@@ -1,346 +1,391 @@
 /* ==========================================================================
-   YOGA PESCHIERA - CONFIGURAZIONE E RESET GENERALE
+   YOGA PESCHIERA — FOGLIO DI STILE PRINCIPALE
+   Architettura: Landing Page Statica (Netlify Hosted)
    ========================================================================== */
 
+/* --- RESET & VARIABILI --- */
 :root {
-    --primary-color: #2c5e53;       /* Verde Salvia / Foresta */
-    --secondary-color: #e8a87c;     /* Terracotta / Sbieco caldo */
-    --accent-color: #c38d9e;        /* Rosa Antico */
-    --bg-light: #f9f8f6;            /* Sfondo Sabbia/Naturale */
-    --text-dark: #333333;
-    --text-muted: #666666;
-    --white: #ffffff;
-    --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --max-width: 1100px;
+  --primary-color: #732d91;
+  --primary-hover: #5c2374;
+  --text-dark: #222222;
+  --text-muted: #555555;
+  --bg-light: #fdfbf7;
+  --bg-white: #ffffff;
+  --font-serif: 'Fraunces', serif;
+  --font-sans: 'Work Sans', sans-serif;
+  --container-max: 1100px;
+  --transition: all 0.3s ease;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 body {
-    font-family: var(--font-main);
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* --- ACCESSIBILITÀ & SEO (NASCOSTO VISIVAMENTE) --- */
+.visually-hidden {
+  display: none !important;
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: all 0.3s ease;
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 0;
 }
 
-a:hover {
-    color: var(--secondary-color);
+/* --- UTILITIES & LAYOUT --- */
+.section-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.divider-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  margin: 2rem auto;
+  opacity: 0.3;
+}
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-ghost:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+}
+
+.btn-lg {
+  padding: 1rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+/* --- HEADER --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 900;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.main-nav a:hover {
+  color: var(--primary-color);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  position: relative;
+  padding: 4rem 1.5rem 3rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo-wrapper {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.hero-logo-wrapper img {
+  width: 280px;
+  max-width: 90%;
+  height: auto;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--primary-color);
+}
+
+.hero-lead {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Animazione respiro di sfondo */
+.hero-breath {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.breath-ring {
+  position: absolute;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.08;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 8s infinite ease-in-out;
+}
+
+.ring-1 { width: 300px; height: 300px; animation-delay: 0s; }
+.ring-2 { width: 500px; height: 500px; animation-delay: 2s; }
+.ring-3 { width: 700px; height: 700px; animation-delay: 4s; }
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.05; }
+  50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.12; }
+}
+
+/* --- MISSION SECTION --- */
+.mission {
+  background-color: var(--bg-white);
+}
+
+.mission h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.mission-text p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.mission-highlight {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 12px 12px 0;
+}
+
+.mission-quote {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
 }
 
 /* ==========================================================================
-   ACCESSIBILITÀ & SEO (H2 NASCOSTI)
+   ATMOSFERA SECTION — GALLERY CAROSELLO ORIZZONTALE (MOBILE-FIRST)
    ========================================================================== */
+.atmosfera .section-inner {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 
-/* Nasconde gli H2 necessari per la struttura SEO/Screen Reader senza impattare la grafica */
-h2.hidden-title, 
-.visually-hidden,
-.sr-only {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
+.atmosfera-scroll-container {
+  display: flex !important;
+  gap: 12px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 10px 1.5rem 16px 1.5rem !important;
+}
+
+/* Nasconde la barra di scorrimento antiestetica */
+.atmosfera-scroll-container::-webkit-scrollbar {
+  display: none !important;
+}
+.atmosfera-scroll-container {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Miniature e Proporzioni */
+.atmosfera-scroll-container img {
+  flex: 0 0 75% !important;
+  max-width: 280px !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+  scroll-snap-align: center !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
+  transition: transform 0.3s ease;
+}
+
+.atmosfera-scroll-container img:hover {
+  transform: translateY(-2px);
+}
+
+/* --- FOOTER & CONTATTI --- */
+.contatti {
+  text-align: center;
+  background-color: var(--bg-white);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background-color: #1a1a1a;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.footer-logo img {
+  height: 35px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.footer-nav a {
+  color: #bbb;
+  text-decoration: none;
 }
 
 /* ==========================================================================
-   HEADER & LOGO (ALLINEAMENTO E CORREZIONE)
-   ========================================================================== */
-
-header, .header {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.header-container, .nav-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Correzione del Logo nell'Header per evitare che risulti storto o ridimensionato male */
-.logo, .header-logo, .brand {
-    display: flex;
-    align-items: center;
-}
-
-.logo img, .header-logo img, .logo-img {
-    width: auto !important;
-    max-height: 60px !important; /* Limita l'altezza per non deformare la nav */
-    max-width: 280px !important;
-    object-fit: contain !important;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    align-items: center;
-}
-
-nav a {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--primary-color);
-}
-
-/* ==========================================================================
-   HERO SECTION (CORREZIONE LOGO ROTONDO E PULSANTE ANIMATO)
-   ========================================================================== */
-
-.hero, #hero, .hero-section {
-    background-color: var(--bg-light);
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 60px 20px 40px 20px !important;
-    gap: 20px !important;
-    text-align: center;
-}
-
-/* Logo tondo di Yoga Peschiera ridotto e centrato */
-.hero-logo, 
-.hero img.logo,
-.hero-img,
-.hero img {
-    max-width: 180px !important;
-    height: auto !important;
-    margin: 0 auto 10px auto !important;
-}
-
-.hero h1, .hero-title {
-    color: var(--primary-color);
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-
-.hero p, .hero-subtitle {
-    color: var(--text-dark);
-    max-width: 700px;
-    margin: 0 auto 15px auto;
-}
-
-/* Pulsante CTA animato ("Cuore pulsante") disaccoppiato */
-.btn-pulse, 
-.btn-heart,
-.hero .btn-primary,
-.hero .btn {
-    display: inline-block !important;
-    padding: 14px 32px !important;
-    font-size: 1.05rem !important;
-    font-weight: 700 !important;
-    color: var(--white) !important;
-    background-color: var(--primary-color) !important;
-    border-radius: 50px !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(44, 94, 83, 0.3);
-    margin-top: 10px !important;
-    animation: pulse-subtle 2s infinite !important;
-    border: none;
-    cursor: pointer;
-}
-
-@keyframes pulse-subtle {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(44, 94, 83, 0.5);
-    }
-    70% {
-        transform: scale(1.04);
-        box-shadow: 0 0 0 12px rgba(44, 94, 83, 0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(44, 94, 83, 0);
-    }
-}
-
-/* ==========================================================================
-   SEZIONE "EVENTI E NOVITÀ"
-   ========================================================================== */
-
-#eventi, 
-.eventi-novita, 
-#novita,
-.news-section {
-    max-width: 850px !important;
-    margin: 40px auto !important;
-    background-color: var(--white);
-    padding: 30px !important;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-    border-left: 5px solid var(--primary-color);
-}
-
-#eventi h2, 
-.eventi-novita h2,
-#novita h2 {
-    font-size: 1.6rem !important;
-    text-align: left;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-/* ==========================================================================
-   GALLERIA FOTOGRAFICA ORIZZONTALE
-   ========================================================================== */
-
-.gallery-container, 
-.gallery, 
-.photo-grid,
-.gallery-wrapper {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    gap: 20px !important;
-    padding: 20px 5px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    -webkit-overflow-scrolling: touch;
-}
-
-.gallery img, 
-.gallery-container img, 
-.photo-grid img {
-    flex: 0 0 auto !important;
-    width: 280px !important;
-    height: 200px !important;
-    object-fit: cover !important;
-    border-radius: 8px !important;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery img:hover, 
-.gallery-container img:hover {
-    transform: translateY(-5px);
-}
-
-/* ==========================================================================
-   GRID CORSI E SCHEDE (MATTUTINI VS SERALI)
-   ========================================================================== */
-
-section {
-    padding: 50px 20px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.corsi-grid, .courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.card-corso, .course-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #e1e1e1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-
-.card-corso.mattina {
-    border-top: 5px solid var(--primary-color);
-}
-
-.card-corso.sera {
-    border-top: 5px solid var(--secondary-color);
-}
-
-.price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: 15px 0;
-}
-
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-
-footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: var(--secondary-color);
-}
-
-/* ==========================================================================
-   RESPONSIVE DESIGN (MOBILE)
+   MEDIA QUERIES (RESPONSIVE DESIGN)
    ========================================================================== */
 
 @media (max-width: 768px) {
-    .header-container, .nav-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .logo img, .header-logo img {
-        max-height: 50px !important;
-    }
+  .main-nav {
+    display: none; /* In seguito gestito da js/main.js per menu hamburger */
+  }
+  
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+  
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 
-    .hero-logo, .hero img.logo, .hero-img {
-        max-width: 140px !important;
-    }
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
 
-    .btn-pulse, .btn-heart {
-        padding: 12px 24px !important;
-        font-size: 0.95rem !important;
-    }
-
-    .gallery-container, .gallery, .photo-grid {
-        justify-content: flex-start !important;
-    }
-
-    .gallery img, .gallery-container img {
-        width: 220px !important;
-        height: 160px !important;
-    }
+@media (min-width: 769px) {
+  /* Adattamento Gallery per Desktop: 4 foto in vista contemporaneamente */
+  .atmosfera-scroll-container img {
+    flex: 0 0 23% !important;
+    max-width: none !important;
+    height: 220px !important;
+  }
 }
