@@ -6,47 +6,41 @@
 }
 
 /* ==========================================================================
-   GALLERY ATMOSFERA — SCROLL ORIZZONTALE COMPATTO (MOBILE & DESKTOP)
+   CAROSELLO ORIZZONTALE COMPATTO PER LA GALLERY (MOBILE-FIRST)
    ========================================================================== */
-.atmosfera .section-inner {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
 .atmosfera-scroll-container {
-  display: flex !important;
-  gap: 12px !important;
-  overflow-x: auto !important;
-  scroll-snap-type: x mandatory !important;
-  -webkit-overflow-scrolling: touch !important;
-  padding: 10px 16px 16px 16px !important;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
 }
 
-/* Nasconde la scrollbar mantenendo la funzionalità */
+/* Nasconde la scrollbar antiestetica */
 .atmosfera-scroll-container::-webkit-scrollbar {
-  display: none !important;
+  display: none;
 }
 .atmosfera-scroll-container {
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Stile e dimensioni contenute delle miniature su Mobile */
+/* Dimensione contenuta delle foto su Mobile */
 .atmosfera-scroll-container img {
-  flex: 0 0 75% !important;
-  max-width: 280px !important;
-  height: 180px !important; /* Ridotto per occupare pochissimo spazio verticale */
-  object-fit: cover !important;
-  border-radius: 8px !important;
-  scroll-snap-align: center !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  flex: 0 0 75%;
+  max-width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  scroll-snap-align: center;
 }
 
-/* Layout per Desktop */
+/* Layout per schermi più ampi (Desktop) */
 @media (min-width: 769px) {
   .atmosfera-scroll-container img {
-    flex: 0 0 25% !important;
-    max-width: none !important;
-    height: 220px !important;
+    flex: 0 0 25%;
+    max-width: none;
+    height: 240px;
   }
 }
