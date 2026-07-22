@@ -1,12 +1,287 @@
 /* ==========================================================================
-   NASCONDI ELEMENTI VISIVAMENTE (Accessibilità e SEO)
+   YOGA PESCHIERA — FOGLIO DI STILE PRINCIPALE
+   Architettura: Landing Page Statica (Netlify Hosted)
    ========================================================================== */
+
+/* --- RESET & VARIABILI --- */
+:root {
+  --primary-color: #732d91;
+  --primary-hover: #5c2374;
+  --text-dark: #222222;
+  --text-muted: #555555;
+  --bg-light: #fdfbf7;
+  --bg-white: #ffffff;
+  --font-serif: 'Fraunces', serif;
+  --font-sans: 'Work Sans', sans-serif;
+  --container-max: 1100px;
+  --transition: all 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* --- ACCESSIBILITÀ & SEO (NASCOSTO VISIVAMENTE) --- */
 .visually-hidden {
   display: none !important;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- UTILITIES & LAYOUT --- */
+.section-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.divider-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  margin: 2rem auto;
+  opacity: 0.3;
+}
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-ghost:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+}
+
+.btn-lg {
+  padding: 1rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+/* --- HEADER --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 900;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.main-nav a:hover {
+  color: var(--primary-color);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  position: relative;
+  padding: 4rem 1.5rem 3rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo-wrapper {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.hero-logo-wrapper img {
+  width: 280px;
+  max-width: 90%;
+  height: auto;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--primary-color);
+}
+
+.hero-lead {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Animazione respiro di sfondo */
+.hero-breath {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.breath-ring {
+  position: absolute;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.08;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 8s infinite ease-in-out;
+}
+
+.ring-1 { width: 300px; height: 300px; animation-delay: 0s; }
+.ring-2 { width: 500px; height: 500px; animation-delay: 2s; }
+.ring-3 { width: 700px; height: 700px; animation-delay: 4s; }
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.05; }
+  50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.12; }
+}
+
+/* --- MISSION SECTION --- */
+.mission {
+  background-color: var(--bg-white);
+}
+
+.mission h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.mission-text p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.mission-highlight {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 12px 12px 0;
+}
+
+.mission-quote {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
 /* ==========================================================================
-   GALLERY ATMOSFERA — SCROLL ORIZZONTALE COMPATTO (MOBILE & DESKTOP)
+   ATMOSFERA SECTION — GALLERY CAROSELLO ORIZZONTALE (MOBILE-FIRST)
    ========================================================================== */
 .atmosfera .section-inner {
   padding-left: 0 !important;
@@ -19,10 +294,10 @@
   overflow-x: auto !important;
   scroll-snap-type: x mandatory !important;
   -webkit-overflow-scrolling: touch !important;
-  padding: 10px 16px 16px 16px !important;
+  padding: 10px 1.5rem 16px 1.5rem !important;
 }
 
-/* Nasconde la scrollbar mantenendo la funzionalità */
+/* Nasconde la barra di scorrimento antiestetica */
 .atmosfera-scroll-container::-webkit-scrollbar {
   display: none !important;
 }
@@ -31,21 +306,85 @@
   scrollbar-width: none !important;
 }
 
-/* Stile e dimensioni contenute delle miniature su Mobile */
+/* Miniature e Proporzioni */
 .atmosfera-scroll-container img {
   flex: 0 0 75% !important;
   max-width: 280px !important;
-  height: 180px !important; /* Ridotto per occupare pochissimo spazio verticale */
+  height: 180px !important;
   object-fit: cover !important;
-  border-radius: 8px !important;
+  border-radius: 10px !important;
   scroll-snap-align: center !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
+  transition: transform 0.3s ease;
 }
 
-/* Layout per Desktop */
+.atmosfera-scroll-container img:hover {
+  transform: translateY(-2px);
+}
+
+/* --- FOOTER & CONTATTI --- */
+.contatti {
+  text-align: center;
+  background-color: var(--bg-white);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background-color: #1a1a1a;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.footer-logo img {
+  height: 35px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.footer-nav a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVE DESIGN)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* In seguito gestito da js/main.js per menu hamburger */
+  }
+  
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+  
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
 @media (min-width: 769px) {
+  /* Adattamento Gallery per Desktop: 4 foto in vista contemporaneamente */
   .atmosfera-scroll-container img {
-    flex: 0 0 25% !important;
+    flex: 0 0 23% !important;
     max-width: none !important;
     height: 220px !important;
   }
