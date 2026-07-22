@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yoga Peschiera — Lo yoga di Peschiera Borromeo</title>
-<meta name="description" content="Corsi di yoga a Peschiera Borromeo per tutti: chi non ha mai praticato, chi rientra da Milano, chi cerca un centro yoga vero nel proprio comune">
+<meta name="description" content="Corsi di yoga a Peschiera Borromeo per tutti: chi non ha mai praticato, chi rientra da Milano, chi cerca un centro yoga vero nel proprio quartiere.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,11 +15,11 @@
 
 <a class="skip-link" href="#main">Vai al contenuto</a>
 
-<!-- ============ HEADER (FISSO) ============ -->
+<!-- ============ HEADER (fisso, non riordinabile) ============ -->
 <header class="site-header" id="top">
   <div class="header-inner">
     <a href="#top" class="logo">
-      <img src="images/brand/logo-mark.png" alt="Yoga Peschiera" style="height: 32px; width: auto; display: block;">
+      <img src="images/brand/logo-mark.png" alt="Yoga Peschiera">
     </a>
 
     <nav class="main-nav" id="main-nav">
@@ -42,9 +42,20 @@
   </div>
 </header>
 
+<!--
+  Ogni <div class="module" data-section="..."> qui sotto è un blocco
+  autonomo. js/main.js legge js/content.js -> sezioni[] e decide
+  ORDINE e VISIBILITÀ di questi blocchi. Non serve spostare il codice
+  a mano: si modifica solo l'elenco "sezioni" in content.js.
+-->
 <main id="main">
 
-  <!-- ============ HERO SECTION ============ -->
+  <div class="module" data-section="banner">
+    <div class="brand-banner">
+      <img src="images/brand/logo-orizzontale.png" alt="Yoga Peschiera">
+    </div>
+  </div>
+
   <div class="module" data-section="hero">
     <section class="hero">
       <div class="hero-breath" aria-hidden="true">
@@ -54,15 +65,10 @@
         <div class="breath-core"></div>
       </div>
       <div class="hero-content">
-        
-        <!-- Logo Unico Ingrandito (280px) e Ravvicinato all'H1 -->
-        <div class="hero-logo-wrapper" style="text-align: center; margin-bottom: 0.5rem;">
-          <img src="images/brand/logo-mark.png" alt="Yoga Peschiera" style="width: 280px; max-width: 90%; height: auto; display: inline-block;">
-        </div>
-
-        <h1 style="margin-top: 0;">Lo yoga <em>di</em> Peschiera Borromeo.</h1>
+        <h1>Lo yoga <em>di</em> Peschiera Borromeo.</h1>
         <p class="hero-lead">
-          Non importa se non sei flessibile, se non sei in forma o se lo sei ma non hai mai praticato. Vieni a provare con noi: le nostre lezioni sono adatte a tutti!
+          Non importa se sei flessibile, se sei in forma o se non hai mai
+          praticato. Vieni a provare.
         </p>
         <div class="hero-actions">
           <a href="#" class="btn btn-primary btn-lg" id="ctaPrenota">Prenota la lezione gratuita</a>
@@ -72,25 +78,31 @@
     </section>
   </div>
 
-  <!-- ============ MISSION SECTION ============ -->
   <div class="module" data-section="mission">
     <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
     <section class="mission" id="mission">
       <div class="section-inner">
-        <p class="eyebrow">Il nostro obiettivo</p>
-        <h2>Creiamo assieme un centro Yoga a Peschiera!</h2>
+        <p class="eyebrow">Perché esistiamo</p>
+        <h2>A Peschiera è sempre mancato un vero centro yoga.</h2>
         <div class="mission-grid">
           <div class="mission-text">
             <p>
-              Lo yoga è una disciplina che migliora l'equilibrio psicofisico combinando postura, respirazione e meditazione. Riduce lo stress abbassando il cortisolo, aumenta la flessibilità e la forza muscolare, favorisce la qualità del sonno e migliora la salute cardiovascolare.
+              La pratica, in realtà, c'è sempre stata: dispersa in piccoli corsi,
+              spesso relegata alle lezioni del mattino e pensata quasi solo per
+              la fascia più anziana, come ginnastica dolce.
             </p>
             <p>
-              Vogliamo portare lo yoga in tutte le sue forme al territorio peschierese. Un'offerta pensata per chi a Peschiera e dintorni ci abita, ma anche dedicato a chi la attraversa la sera rientrando dagli uffici di Milano e ha bisogno di un posto dove fermarsi e prendersi un po' cura di sé.
+              Noi vogliamo cambiare questo. Portiamo lo yoga in tutte le sue
+              forme — dinamico, dolce, meditativo — dentro il territorio
+              peschierese, pensato per chi ci abita, per chi lo attraversa, e
+              per chi ogni sera rientra stanco dagli uffici di Milano e ha
+              bisogno di un posto vicino a casa dove fermarsi davvero.
             </p>
           </div>
           <div class="mission-highlight">
             <p class="mission-quote">
-              Il nostro impegno è offrire classi yoga per tutte le età, tutti i corpi con lezioni adatte a ogni tipo di preparazione fisica: in sicurezza, ma con il giusto livello di impegno per la soddisfazione di chiunque!
+              "Yoga per tutte le età, tutti i corpi, tutti gli orari della
+              giornata — nel proprio quartiere."
             </p>
           </div>
         </div>
@@ -98,31 +110,23 @@
     </section>
   </div>
 
-  <!-- ============ ATMOSFERA SECTION (GALLERY SCROLL ORIZZONTALE) ============ -->
   <div class="module" data-section="atmosfera">
     <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
     <section class="atmosfera" id="atmosfera">
       <div class="section-inner">
-        
-        <!-- Titolo nascosto visivamente ma presente per indicizzazione SEO -->
-        <h2 class="visually-hidden">
-          Chi siamo: Fabrizio Lauria e Valentina Pirazzoli — Lezioni e corsi di Yoga Peschiera
-        </h2>
-
-        <!-- Slider Orizzontale Compatto per Mobile -->
-        <div class="atmosfera-scroll-container">
-          <img src="images/gallery/atmosfera-1.jpg" alt="Lezione di yoga di gruppo a Peschiera Borromeo con Fabrizio Lauria e Valentina Pirazzoli">
-          <img src="images/gallery/atmosfera-2.jpg" alt="Pratica e posizioni di yoga a Peschiera Borromeo">
-          <img src="images/gallery/atmosfera-3.jpg" alt="Gruppo di yoga Peschiera durante la pratica in sala">
-          <img src="images/gallery/atmosfera-4.jpg" alt="Atmosfera durante la lezione di yoga a Peschiera">
-          <img src="images/gallery/atmosfera-5.jpg" alt="Corsi di Yoga Peschiera Borromeo">
+        <p class="eyebrow">In sala, con voi</p>
+        <h2>Com'è una lezione di Yoga Peschiera</h2>
+        <div class="atmosfera-grid">
+          <img class="g-big" src="images/gallery/atmosfera-1.jpg" alt="Lezione di yoga di gruppo a Peschiera Borromeo">
+          <img class="g-small" src="images/gallery/atmosfera-2.jpg" alt="Praticanti durante una posizione di yoga">
+          <img class="g-small" src="images/gallery/atmosfera-3.jpg" alt="Gruppo di yoga durante la pratica">
+          <img class="g-small" src="images/gallery/atmosfera-4.jpg" alt="Momento di pratica yoga di gruppo">
+          <img class="g-small" src="images/gallery/atmosfera-5.jpg" alt="Lezione di yoga a Peschiera Borromeo">
         </div>
-
       </div>
     </section>
   </div>
 
-  <!-- ============ CORSI SECTION ============ -->
   <div class="module" data-section="corsi">
     <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
     <section class="corsi" id="corsi">
@@ -138,7 +142,6 @@
     </section>
   </div>
 
-  <!-- ============ NEWS SECTION ============ -->
   <div class="module" data-section="news">
     <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
     <section class="news" id="news">
@@ -150,7 +153,6 @@
     </section>
   </div>
 
-  <!-- ============ TEAM SECTION ============ -->
   <div class="module" data-section="team">
     <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
     <section class="team" id="chi-siamo">
@@ -162,7 +164,6 @@
     </section>
   </div>
 
-  <!-- ============ DOVE SECTION ============ -->
   <div class="module" data-section="dove">
     <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
     <section class="dove" id="dove">
@@ -174,7 +175,6 @@
     </section>
   </div>
 
-  <!-- ============ CONTATTI SECTION ============ -->
   <div class="module" data-section="contatti">
     <section class="contatti" id="contatti">
       <div class="section-inner">
@@ -199,7 +199,7 @@
 
 </main>
 
-<!-- ============ FOOTER ============ -->
+<!-- ============ FOOTER (fisso, non riordinabile) ============ -->
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-logo"><img src="images/brand/logo-orizzontale.png" alt="Yoga Peschiera"></p>
