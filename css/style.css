@@ -48,9 +48,10 @@ a:hover {
    ACCESSIBILITÀ & SEO (H2 NASCOSTI)
    ========================================================================== */
 
-/* Nasconde gli H2 necessari alla struttura SEO senza mostrare testo visibile */
+/* Nasconde gli H2 necessari per la struttura SEO/Screen Reader senza impattare la grafica */
 h2.hidden-title, 
-.visually-hidden {
+.visually-hidden,
+.sr-only {
     position: absolute !important;
     width: 1px !important;
     height: 1px !important;
@@ -63,10 +64,10 @@ h2.hidden-title,
 }
 
 /* ==========================================================================
-   HEADER & NAVIGATION
+   HEADER & LOGO (ALLINEAMENTO E CORREZIONE)
    ========================================================================== */
 
-header {
+header, .header {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
@@ -74,7 +75,7 @@ header {
     z-index: 100;
 }
 
-.header-container {
+.header-container, .nav-container {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 15px 20px;
@@ -83,52 +84,77 @@ header {
     align-items: center;
 }
 
-.logo img {
-    width: 280px !important;
-    height: auto;
+/* Correzione del Logo nell'Header per evitare che risulti storto o ridimensionato male */
+.logo, .header-logo, .brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo img, .header-logo img, .logo-img {
+    width: auto !important;
+    max-height: 60px !important; /* Limita l'altezza per non deformare la nav */
+    max-width: 280px !important;
+    object-fit: contain !important;
 }
 
 nav ul {
     display: flex;
     list-style: none;
     gap: 20px;
+    align-items: center;
 }
 
 nav a {
     font-weight: 600;
     font-size: 0.95rem;
+    color: var(--primary-color);
 }
 
 /* ==========================================================================
-   HERO SECTION (CORREZIONE LOGO E PULSANTE ANIMATO)
+   HERO SECTION (CORREZIONE LOGO ROTONDO E PULSANTE ANIMATO)
    ========================================================================== */
 
-.hero, #hero {
+.hero, #hero, .hero-section {
+    background-color: var(--bg-light);
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 60px 20px 40px 20px !important;
-    gap: 20px !important; /* Mantiene la distanza tra gli elementi */
+    gap: 20px !important;
     text-align: center;
 }
 
-/* Logo rotondo ridimensionato per non sovrastare la sezione */
+/* Logo tondo di Yoga Peschiera ridotto e centrato */
 .hero-logo, 
 .hero img.logo,
+.hero-img,
 .hero img {
     max-width: 180px !important;
     height: auto !important;
-    margin-bottom: 10px !important;
+    margin: 0 auto 10px auto !important;
 }
 
-/* Pulsante CTA animato ("Cuore pulsante") */
+.hero h1, .hero-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.hero p, .hero-subtitle {
+    color: var(--text-dark);
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+}
+
+/* Pulsante CTA animato ("Cuore pulsante") disaccoppiato */
 .btn-pulse, 
+.btn-heart,
 .hero .btn-primary,
 .hero .btn {
     display: inline-block !important;
-    padding: 12px 28px !important;
-    font-size: 1rem !important;
+    padding: 14px 32px !important;
+    font-size: 1.05rem !important;
     font-weight: 700 !important;
     color: var(--white) !important;
     background-color: var(--primary-color) !important;
@@ -138,6 +164,8 @@ nav a {
     box-shadow: 0 4px 15px rgba(44, 94, 83, 0.3);
     margin-top: 10px !important;
     animation: pulse-subtle 2s infinite !important;
+    border: none;
+    cursor: pointer;
 }
 
 @keyframes pulse-subtle {
@@ -146,7 +174,7 @@ nav a {
         box-shadow: 0 0 0 0 rgba(44, 94, 83, 0.5);
     }
     70% {
-        transform: scale(1.03);
+        transform: scale(1.04);
         box-shadow: 0 0 0 12px rgba(44, 94, 83, 0);
     }
     100% {
@@ -161,7 +189,8 @@ nav a {
 
 #eventi, 
 .eventi-novita, 
-#novita {
+#novita,
+.news-section {
     max-width: 850px !important;
     margin: 40px auto !important;
     background-color: var(--white);
@@ -172,9 +201,11 @@ nav a {
 }
 
 #eventi h2, 
-.eventi-novita h2 {
+.eventi-novita h2,
+#novita h2 {
     font-size: 1.6rem !important;
     text-align: left;
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
@@ -184,7 +215,8 @@ nav a {
 
 .gallery-container, 
 .gallery, 
-.photo-grid {
+.photo-grid,
+.gallery-wrapper {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
@@ -214,11 +246,11 @@ nav a {
 }
 
 /* ==========================================================================
-   GRID CORSI E SCHEDE
+   GRID CORSI E SCHEDE (MATTUTINI VS SERALI)
    ========================================================================== */
 
 section {
-    padding: 60px 20px;
+    padding: 50px 20px;
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -230,19 +262,14 @@ h2 {
     text-align: center;
 }
 
-p {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-}
-
-.corsi-grid {
+.corsi-grid, .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
 
-.card-corso {
+.card-corso, .course-card {
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
@@ -250,14 +277,15 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
 .card-corso.mattina {
-    border-top: 4px solid var(--primary-color);
+    border-top: 5px solid var(--primary-color);
 }
 
 .card-corso.sera {
-    border-top: 4px solid var(--secondary-color);
+    border-top: 5px solid var(--secondary-color);
 }
 
 .price {
@@ -289,36 +317,29 @@ footer a {
    ========================================================================== */
 
 @media (max-width: 768px) {
-    .header-container {
+    .header-container, .nav-container {
         flex-direction: column;
         gap: 15px;
     }
     
-    .logo img {
-        width: 220px !important;
+    .logo img, .header-logo img {
+        max-height: 50px !important;
     }
 
-    .hero-logo, 
-    .hero img.logo,
-    .hero img {
+    .hero-logo, .hero img.logo, .hero-img {
         max-width: 140px !important;
     }
 
-    .btn-pulse, 
-    .hero .btn-primary,
-    .hero .btn {
-        padding: 10px 22px !important;
-        font-size: 0.9rem !important;
+    .btn-pulse, .btn-heart {
+        padding: 12px 24px !important;
+        font-size: 0.95rem !important;
     }
 
-    .gallery-container, 
-    .gallery, 
-    .photo-grid {
+    .gallery-container, .gallery, .photo-grid {
         justify-content: flex-start !important;
     }
 
-    .gallery img, 
-    .gallery-container img {
+    .gallery img, .gallery-container img {
         width: 220px !important;
         height: 160px !important;
     }
