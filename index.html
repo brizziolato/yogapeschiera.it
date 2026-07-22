@@ -1,105 +1,220 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoga Peschiera | ASD Hatha & Vinyasa Yoga</title>
-    <meta name="description" content="Corsi di Yoga a Peschiera Borromeo firmati ASD Yoga Peschiera. Lezioni mattutine e serali a San Bovio e Bettola.">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga Peschiera — Lo yoga di Peschiera Borromeo</title>
+<meta name="description" content="Corsi di yoga a Peschiera Borromeo per tutti: chi non ha mai praticato, chi rientra da Milano, chi cerca un centro yoga vero nel proprio comune">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="images/brand/logo-mark.png">
 </head>
 <body>
 
-    <!-- HEADER & NAVIGATION -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="header-logo">
-                <a href="#">
-                    <img src="images/logo.png" alt="Yoga Peschiera ASD Logo" class="logo-header-img">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#chi-siamo">Chi Siamo</a></li>
-                    <li><a href="#eventi">Eventi & Novità</a></li>
-                    <li><a href="#corsi">Corsi & Orari</a></li>
-                    <li><a href="#galleria">Galleria</a></li>
-                    <li><a href="#contatti">Contatti</a></li>
-                </ul>
-            </nav>
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- ============ HEADER (FISSO) ============ -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <img src="images/brand/logo-mark.png" alt="Yoga Peschiera" style="height: 32px; width: auto; display: block;">
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#mission">Mission</a>
+      <a href="#atmosfera">Atmosfera</a>
+      <a href="#corsi">Corsi</a>
+      <a href="#news">News</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#dove">Dove</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#contatti" class="btn btn-primary">Prova gratuita</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO SECTION ============ -->
+  <div class="module" data-section="hero">
+    <section class="hero">
+      <div class="hero-breath" aria-hidden="true">
+        <div class="breath-ring ring-1"></div>
+        <div class="breath-ring ring-2"></div>
+        <div class="breath-ring ring-3"></div>
+        <div class="breath-core"></div>
+      </div>
+      <div class="hero-content">
+        
+        <!-- Logo Unico Ingrandito (280px) e Ravvicinato all'H1 -->
+        <div class="hero-logo-wrapper" style="text-align: center; margin-bottom: 0.5rem;">
+          <img src="images/brand/logo-mark.png" alt="Yoga Peschiera" style="width: 280px; max-width: 90%; height: auto; display: inline-block;">
         </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="hero">
-        <div class="hero-content">
-            <img src="images/logo-round.png" alt="Yoga Peschiera Simbolo" class="hero-round-logo">
-            <h1 class="hero-title">Yoga Peschiera ASD</h1>
-            <p class="hero-subtitle">Trova il tuo equilibrio attraverso la pratica. Corsi di Hatha e Vinyasa Yoga a Peschiera Borromeo guidati da Fabrizio Lauria e Valentina Pirazzoli.</p>
-            <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn-pulse-cta">Iscriviti / Richiedi Info</a>
+        <h1 style="margin-top: 0;">Lo yoga <em>di</em> Peschiera Borromeo.</h1>
+        <p class="hero-lead">
+          Non importa se non sei flessibile, se non sei in forma o se lo sei ma non hai mai praticato. Vieni a provare con noi: le nostre lezioni sono adatte a tutti!
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary btn-lg" id="ctaPrenota">Prenota la lezione gratuita</a>
+          <a href="#" class="btn btn-ghost btn-lg" id="ctaWhatsapp">Scrivici su WhatsApp</a>
         </div>
+      </div>
     </section>
+  </div>
 
-    <!-- CHI SIAMO -->
-    <section id="chi-siamo" class="section-container">
-        <h2>Chi Siamo</h2>
-        <p class="text-block">ASD Yoga Peschiera nasce dalla passione condivisa di Fabrizio Lauria e Valentina Pirazzoli con l'obiettivo di diffondere la cultura dello yoga, del movimento consapevole e del benessere psicofisico sul territorio di Peschiera Borromeo.</p>
-    </section>
-
-    <!-- SEZIONE EVENTI E NOVITÀ -->
-    <section id="eventi" class="eventi-box">
-        <h2>Eventi e Novità</h2>
-        <h2 class="seo-hidden-title">Struttura Eventi SEO</h2>
-        <p><strong>Settembre 2026:</strong> Vieni a trovarci alla Festa dello Sport di Peschiera Borromeo per conoscerci di persona e provare le nostre dimostrazioni gratuite!</p>
-        <p><strong>Ottobre 2026:</strong> Inizio ufficiale di tutti i corsi annuali mattutini e serali. Le pre-iscrizioni sono aperte.</p>
-    </section>
-
-    <!-- CORSI E PRICING -->
-    <section id="corsi" class="section-container">
-        <h2>Corsi e Orari (Da Ottobre 2026)</h2>
-        <div class="courses-grid">
-            
-            <!-- SCHEDA MATTINA -->
-            <div class="course-card card-mattina">
-                <span class="badge badge-mattina">Gestione Diretta ASD</span>
-                <h3>Corsi Mattutini</h3>
-                <p><strong>Frequenza:</strong> Monosettimanale (31 lezioni)</p>
-                <p><strong>Orari:</strong> Mercoledì 8:00 - 9:00 | 9:15 - 10:15</p>
-                <div class="price">400 € / Anno</div>
-                <p class="price-sub">(oppure Carnet 10 lezioni a 150 €)</p>
-                <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn btn-primary">Iscriviti al Mattino</a>
-            </div>
-
-            <!-- SCHEDA SERA -->
-            <div class="course-card card-sera">
-                <span class="badge badge-sera">In Convenzione con Acquamarina</span>
-                <h3>Corsi Serali</h3>
-                <p><strong>Martedì:</strong> 20:30 - 21:25 (Elem. San Bovio)</p>
-                <p><strong>Venerdì:</strong> 20:00 - 20:55 (Elem. Bettola)</p>
-                <div class="price">190 € / 200 €</div>
-                <p class="price-sub">(Residenti / Non Residenti + 5 € ass.)</p>
-                <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn btn-secondary">Manifesta Interesse</a>
-            </div>
-
+  <!-- ============ MISSION SECTION ============ -->
+  <div class="module" data-section="mission">
+    <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
+    <section class="mission" id="mission">
+      <div class="section-inner">
+        <p class="eyebrow">Il nostro obiettivo</p>
+        <h2>Creiamo assieme un centro Yoga a Peschiera!</h2>
+        <div class="mission-grid">
+          <div class="mission-text">
+            <p>
+              Lo yoga è una disciplina che migliora l'equilibrio psicofisico combinando postura, respirazione e meditazione. Riduce lo stress abbassando il cortisolo, aumenta la flessibilità e la forza muscolare, favorisce la qualità del sonno e migliora la salute cardiovascolare.
+            </p>
+            <p>
+              Vogliamo portare lo yoga in tutte le sue forme al territorio peschierese. Un'offerta pensata per chi a Peschiera e dintorni ci abita, ma anche dedicato a chi la attraversa la sera rientrando dagli uffici di Milano e ha bisogno di un posto dove fermarsi e prendersi un po' cura di sé.
+            </p>
+          </div>
+          <div class="mission-highlight">
+            <p class="mission-quote">
+              Il nostro impegno è offrire classi yoga per tutte le età, tutti i corpi con lezioni adatte a ogni tipo di preparazione fisica: in sicurezza, ma con il giusto livello di impegno per la soddisfazione di chiunque!
+            </p>
+          </div>
         </div>
+      </div>
     </section>
+  </div>
 
-    <!-- GALLERIA FOTOGRAFICA -->
-    <section id="galleria" class="section-container">
-        <h2>La Nostra Pratica</h2>
-        <div class="gallery-row">
-            <img src="images/foto1.jpg" alt="Pratica Yoga 1">
-            <img src="images/foto2.jpg" alt="Pratica Yoga 2">
-            <img src="images/foto3.jpg" alt="Pratica Yoga 3">
-            <img src="images/foto4.jpg" alt="Pratica Yoga 4">
+  <!-- ============ ATMOSFERA SECTION (GALLERY SCROLL ORIZZONTALE) ============ -->
+  <div class="module" data-section="atmosfera">
+    <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
+    <section class="atmosfera" id="atmosfera">
+      <div class="section-inner">
+        
+        <!-- Titolo nascosto visivamente ma presente per indicizzazione SEO -->
+        <h2 class="visually-hidden">
+          Chi siamo: Fabrizio Lauria e Valentina Pirazzoli — Lezioni e corsi di Yoga Peschiera
+        </h2>
+
+        <!-- Slider Orizzontale Compatto per Mobile -->
+        <div class="atmosfera-scroll-container">
+          <img src="images/gallery/atmosfera-1.jpg" alt="Lezione di yoga di gruppo a Peschiera Borromeo con Fabrizio Lauria e Valentina Pirazzoli">
+          <img src="images/gallery/atmosfera-2.jpg" alt="Pratica e posizioni di yoga a Peschiera Borromeo">
+          <img src="images/gallery/atmosfera-3.jpg" alt="Gruppo di yoga Peschiera durante la pratica in sala">
+          <img src="images/gallery/atmosfera-4.jpg" alt="Atmosfera durante la lezione di yoga a Peschiera">
+          <img src="images/gallery/atmosfera-5.jpg" alt="Corsi di Yoga Peschiera Borromeo">
         </div>
+
+      </div>
     </section>
+  </div>
 
-    <!-- FOOTER -->
-    <footer id="contatti" class="site-footer">
-        <p><strong>ASD Yoga Peschiera</strong> - Peschiera Borromeo (MI)</p>
-        <p>Email: <a href="mailto:info@yogapeschiera.it">info@yogapeschiera.it</a></p>
-        <p class="legal-note">&copy; 2026 Yoga Peschiera ASD. Affiliata EPS / Iscritta al RASD.</p>
-    </footer>
+  <!-- ============ CORSI SECTION ============ -->
+  <div class="module" data-section="corsi">
+    <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
+    <section class="corsi" id="corsi">
+      <div class="section-inner">
+        <p class="eyebrow">Le lezioni</p>
+        <h2>Corsi per ogni esigenza, non un unico stampo.</h2>
+        <div class="corsi-grid" id="corsiGrid"><!-- generato da js/main.js --></div>
+        <div class="calendario-box" id="calendarioBox">
+          <h3>Calendario</h3>
+          <div id="calendarioContent"><!-- generato da js/main.js --></div>
+        </div>
+      </div>
+    </section>
+  </div>
 
+  <!-- ============ NEWS SECTION ============ -->
+  <div class="module" data-section="news">
+    <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
+    <section class="news" id="news">
+      <div class="section-inner">
+        <p class="eyebrow">Da non perdere</p>
+        <h2>Eventi e novità</h2>
+        <div class="news-list" id="newsList"><!-- generato da js/main.js --></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ TEAM SECTION ============ -->
+  <div class="module" data-section="team">
+    <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
+    <section class="team" id="chi-siamo">
+      <div class="section-inner">
+        <p class="eyebrow">Chi trovi in sala</p>
+        <h2>Chi siamo</h2>
+        <div class="team-grid" id="teamGrid"><!-- generato da js/main.js --></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ DOVE SECTION ============ -->
+  <div class="module" data-section="dove">
+    <div class="divider module-divider" aria-hidden="true"><span class="divider-dot"></span></div>
+    <section class="dove" id="dove">
+      <div class="section-inner">
+        <p class="eyebrow">La sede</p>
+        <h2>Dove ci trovi</h2>
+        <div class="dove-box" id="doveBox"><!-- generato da js/main.js --></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ CONTATTI SECTION ============ -->
+  <div class="module" data-section="contatti">
+    <section class="contatti" id="contatti">
+      <div class="section-inner">
+        <p class="eyebrow">Parliamone</p>
+        <h2>Dicci di cosa hai bisogno.</h2>
+        <p class="contatti-lead">
+          Yoga Peschiera nasce per adattarsi a chi vive il territorio, non il
+          contrario. Scrivici che orari cerchi, che tipo di pratica ti
+          interessa, o semplicemente prenota una prova gratuita: ci diciamo
+          tutto a voce.
+        </p>
+        <div class="contatti-actions">
+          <a href="#" class="btn btn-primary btn-lg" id="ctaPrenota2">Prenota la lezione gratuita</a>
+          <a href="#" class="btn btn-outline btn-lg" id="ctaWhatsapp2">Scrivici su WhatsApp</a>
+        </div>
+        <p class="contatti-email">
+          Oppure scrivi a <a id="ctaEmail" href="#">info@yogapeschiera.it</a>
+        </p>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo"><img src="images/brand/logo-orizzontale.png" alt="Yoga Peschiera"></p>
+    <p class="footer-tagline">Lo yoga di Peschiera Borromeo, per tutti.</p>
+    <nav class="footer-nav">
+      <a href="#mission">Mission</a>
+      <a href="#corsi">Corsi</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#dove">Dove</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <p class="footer-copy">© <span id="footerYear"></span> Yoga Peschiera</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
