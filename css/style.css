@@ -140,11 +140,10 @@ img{ max-width:100%; display:block; }
   display:flex;
   align-items:center;
   white-space: nowrap;
-  flex-shrink: 0;
 }
 .logo img{
-  height: auto;
-  width: clamp(100px, 20vw, 230px);
+  height: 44px;
+  width: auto;
   display:block;
 }
 
@@ -207,13 +206,6 @@ img{ max-width:100%; display:block; }
   text-align:center;
 }
 .hero-content{ position: relative; z-index: 2; max-width: 720px; }
-.hero-logo{
-  width: 96px;
-  height: auto;
-  margin: 0 auto 28px;
-  display: block;
-  animation: breathe-core 5.4s ease-in-out infinite;
-}
 .hero-lead{
   font-size: 1.15rem;
   max-width: 46ch;
@@ -262,7 +254,7 @@ img{ max-width:100%; display:block; }
   50%      { transform: scale(1.08); }
 }
 @media (prefers-reduced-motion: reduce){
-  .breath-ring, .breath-core, .hero-logo{ animation: none; }
+  .breath-ring, .breath-core{ animation: none; }
 }
 
 /* ---------- DIVIDER (motivo respiro ripetuto) ---------- */
@@ -511,9 +503,8 @@ img{ max-width:100%; display:block; }
 
 @media (max-width: 760px){
   .main-nav{ display:none; }
-  .header-inner{ gap: 12px; padding: 0 16px; }
-  .header-cta .btn{ padding: .55em .95em; font-size: .8rem; }
-  .nav-toggle{ display:flex; width: 36px; height: 36px; }
+  .header-cta .btn{ padding: .7em 1.1em; font-size: .85rem; }
+  .nav-toggle{ display:flex; }
 
   .site-header.nav-open .main-nav{
     display:flex;
@@ -535,7 +526,6 @@ img{ max-width:100%; display:block; }
   .atmosfera-grid .g-small{ grid-column: span 1; grid-row: span 1; }
 
   .hero{ min-height: 92vh; padding: 48px 20px; }
-  .hero-logo{ width: 72px; margin-bottom: 20px; }
   .breath-ring, .breath-core{ transform: scale(0.7); }
   .ring-3{ width: 420px; height:420px; }
   .ring-2{ width: 340px; height:340px; }
