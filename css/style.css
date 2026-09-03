@@ -140,10 +140,11 @@ img{ max-width:100%; display:block; }
   display:flex;
   align-items:center;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .logo img{
-  height: 44px;
-  width: auto;
+  height: auto;
+  width: clamp(100px, 20vw, 230px);
   display:block;
 }
 
@@ -503,8 +504,9 @@ img{ max-width:100%; display:block; }
 
 @media (max-width: 760px){
   .main-nav{ display:none; }
-  .header-cta .btn{ padding: .7em 1.1em; font-size: .85rem; }
-  .nav-toggle{ display:flex; }
+  .header-inner{ gap: 12px; padding: 0 16px; }
+  .header-cta .btn{ padding: .55em .95em; font-size: .8rem; }
+  .nav-toggle{ display:flex; width: 36px; height: 36px; }
 
   .site-header.nav-open .main-nav{
     display:flex;
