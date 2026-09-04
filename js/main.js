@@ -41,7 +41,7 @@
     const node = document.getElementById(id);
     if (node) node.href = waHref;
   });
-  ["ctaPrenota", "ctaPrenota2"].forEach((id) => {
+  ["ctaPrenota", "ctaPrenota2", "ctaPrenota3"].forEach((id) => {
     const node = document.getElementById(id);
     if (node) node.href = C.contatti.formPrenotazione;
   });
@@ -73,48 +73,20 @@
     });
   }
 
-  // ---------- CORSI ----------
-  const corsiGrid = document.getElementById("corsiGrid");
-  if (corsiGrid && Array.isArray(C.corsi)) {
-    C.corsi.forEach((corso) => {
-      const card = el("div", "corso-card");
-      card.innerHTML = `
-        <span class="livello">${corso.livello}</span>
-        <h3>${corso.nome}</h3>
-        <p>${corso.descrizione}</p>
+  // ---------- CORSI (blocchi orario + sede) ----------
+  const corsiBlocchi = document.getElementById("corsiBlocchi");
+  if (corsiBlocchi && Array.isArray(C.corsiOrari)) {
+    C.corsiOrari.forEach((c) => {
+      const box = el("div", "dove-box");
+      box.innerHTML = `
+        <div>
+          <h3>${c.giorno}</h3>
+          <p>${c.luogo}</p>
+        </div>
+        <div class="map-placeholder">Mappa in arrivo<br>(si aggiunge con l'indirizzo definitivo)</div>
       `;
-      corsiGrid.appendChild(card);
+      corsiBlocchi.appendChild(box);
     });
-  }
-
-  // ---------- CALENDARIO ----------
-  const calContent = document.getElementById("calendarioContent");
-  if (calContent) {
-    if (!C.calendarioAttivo) {
-      calContent.innerHTML = `
-        <p class="tbd-note">Il calendario definitivo è in arrivo. Scrivici per conoscere i primi orari disponibili.</p>
-      `;
-    } else if (Array.isArray(C.calendario)) {
-      const rows = C.calendario
-        .map(
-          (r) => `
-        <tr>
-          <td>${r.giorno}</td>
-          <td>${r.orario}</td>
-          <td>${r.corso}</td>
-          <td>${r.luogo}</td>
-        </tr>`
-        )
-        .join("");
-      calContent.innerHTML = `
-        <table class="calendario-table">
-          <thead>
-            <tr><th>Giorno</th><th>Orario</th><th>Corso</th><th>Luogo</th></tr>
-          </thead>
-          <tbody>${rows}</tbody>
-        </table>
-      `;
-    }
   }
 
   // ---------- NEWS ----------
