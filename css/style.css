@@ -306,22 +306,29 @@ img{ max-width:100%; display:block; }
   margin:0;
 }
 
-/* ---------- ATMOSFERA (galleria foto) ---------- */
-.atmosfera{ background: var(--white); }
-.atmosfera-grid{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 200px);
+/* ---------- ATMOSFERA (galleria foto a scorrimento orizzontale) ---------- */
+.atmosfera{ background: var(--white); padding: 40px 0; }
+.atmosfera-scroll{
+  display: flex;
   gap: 14px;
-  margin-top: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 24px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) transparent;
 }
-.atmosfera-grid img{
-  width:100%; height:100%;
+.atmosfera-scroll::-webkit-scrollbar{ height: 6px; }
+.atmosfera-scroll::-webkit-scrollbar-thumb{ background: rgba(43,90,78,0.35); border-radius: 999px; }
+.atmosfera-scroll::-webkit-scrollbar-track{ background: transparent; }
+.atmosfera-scroll img{
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  height: 380px;
+  width: auto;
   object-fit: cover;
   border-radius: var(--radius);
 }
-.atmosfera-grid .g-big{ grid-column: span 2; grid-row: span 2; }
-.atmosfera-grid .g-small{ grid-column: span 2; grid-row: span 1; }
 
 /* ---------- CORSI ---------- */
 .corsi-grid{
@@ -527,12 +534,8 @@ img{ max-width:100%; display:block; }
     border-bottom: 1px solid rgba(28,38,32,0.08);
   }
 
-  .atmosfera-grid{
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 140px);
-  }
-  .atmosfera-grid .g-big{ grid-column: span 2; grid-row: span 1; }
-  .atmosfera-grid .g-small{ grid-column: span 1; grid-row: span 1; }
+  .atmosfera-scroll{ padding: 0 20px 10px; gap: 10px; }
+  .atmosfera-scroll img{ height: 240px; }
 
   .hero{ min-height: 92vh; padding: 48px 20px; }
   .hero-logo{ width: 110px; height: 110px; margin-bottom: 16px; }
