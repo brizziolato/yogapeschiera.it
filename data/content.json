@@ -6,7 +6,7 @@
     { "id": "corsi",     "visibile": true },
     { "id": "news",      "visibile": true },
     { "id": "team",      "visibile": true },
-    { "id": "atmosfera", "visibile": false },
+    { "id": "atmosfera", "visibile": true },
     { "id": "dove",      "visibile": false },
     { "id": "contatti",  "visibile": true }
   ],
