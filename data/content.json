@@ -3,10 +3,10 @@
     { "id": "banner",    "visibile": false },
     { "id": "hero",      "visibile": true },
     { "id": "mission",   "visibile": true },
-    { "id": "atmosfera", "visibile": true },
     { "id": "corsi",     "visibile": true },
     { "id": "news",      "visibile": true },
     { "id": "team",      "visibile": true },
+    { "id": "atmosfera", "visibile": true },
     { "id": "dove",      "visibile": true },
     { "id": "contatti",  "visibile": true }
   ],
