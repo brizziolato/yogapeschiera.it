@@ -207,6 +207,13 @@ img{ max-width:100%; display:block; }
   text-align:center;
 }
 .hero-content{ position: relative; z-index: 2; max-width: 720px; }
+.hero-logo{
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  display: block;
+}
 .hero-lead{
   font-size: 1.15rem;
   max-width: 46ch;
@@ -528,6 +535,7 @@ img{ max-width:100%; display:block; }
   .atmosfera-grid .g-small{ grid-column: span 1; grid-row: span 1; }
 
   .hero{ min-height: 92vh; padding: 48px 20px; }
+  .hero-logo{ width: 64px; height: 64px; margin-bottom: 14px; }
   .breath-ring, .breath-core{ transform: scale(0.7); }
   .ring-3{ width: 420px; height:420px; }
   .ring-2{ width: 340px; height:340px; }
