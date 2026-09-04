@@ -145,7 +145,6 @@
         : `<div class="team-avatar"></div>`;
       card.innerHTML = `
         ${avatar}
-        <p class="ruolo">${persona.ruolo}</p>
         <h3>${persona.nome}</h3>
         <p>${persona.bio}</p>
       `;
