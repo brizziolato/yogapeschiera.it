@@ -11,34 +11,19 @@
     { "id": "contatti",  "visibile": true }
   ],
 
-  "corsi": [
+  "corsiOrari": [
     {
-      "nome": "Hatha Yoga",
-      "livello": "Tutti i livelli",
-      "descrizione": "Posture, respiro e ritmi lenti. Il punto di partenza ideale se non hai mai praticato."
+      "giorno": "Martedì–Giovedì mattina (8.30–9.30)",
+      "luogo": "Presso la palestra Fortitudo Training Academy"
     },
     {
-      "nome": "Vinyasa Flow",
-      "livello": "Livello base–intermedio",
-      "descrizione": "Sequenze dinamiche legate al respiro. Per chi cerca movimento ed energia."
+      "giorno": "Martedì sera (20.30–21.30)",
+      "luogo": "Presso la palestra della scuola elementare di San Bovio (Viale Abruzzi 3)"
     },
     {
-      "nome": "Yoga Dolce",
-      "livello": "Tutti i livelli, anche over 65",
-      "descrizione": "Pratica delicata su sedia o materassino, pensata per mobilità e benessere articolare."
-    },
-    {
-      "nome": "Yoga della Sera",
-      "livello": "Tutti i livelli",
-      "descrizione": "Pensato per chi torna a casa da Milano: decompressione, respiro, rilassamento."
+      "giorno": "Venerdì sera (20.00–21.00)",
+      "luogo": "Presso la palestra della scuola elementare di Bettola (Via Goldoni 1)"
     }
-  ],
-
-  "calendarioAttivo": false,
-  "calendario": [
-    { "giorno": "Lunedì", "orario": "TBD", "corso": "TBD", "luogo": "TBD" },
-    { "giorno": "Mercoledì", "orario": "TBD", "corso": "TBD", "luogo": "TBD" },
-    { "giorno": "Venerdì", "orario": "TBD", "corso": "TBD", "luogo": "TBD" }
   ],
 
   "news": [
@@ -53,13 +38,15 @@
   "team": [
     {
       "nome": "Valentina Pirazzoli",
+      "ruolo": "Insegnante di Haṭha Yoga",
       "foto": "images/team/valentina_pirazzoli.jpg",
-      "bio": "Biologa con un dottorato in genetica molecolare, si è avvicinata allo yoga negli USA nel 2011. Insegnante di Haṭha Yoga integra a questo lo studio dello Yin, dell'Ashtanga e dello Jñāna Yoga, promuovendo una pratica volta alla consapevolezza e alla trasformazione interiore."
+      "bio": "Biologa con un dottorato in genetica molecolare, si è avvicinata allo yoga negli USA nel 2011. Insegnante di Haṭha Yoga formata presso la scuola Svatantra darśana (diploma CSEN 500 ore), integra lo studio dell'Haṭha, del Vinyāsa e lo Jñāna Yoga, promuovendo una pratica volta alla consapevolezza e alla trasformazione interiore."
     },
     {
       "nome": "Fabrizio Lauria",
+      "ruolo": "Insegnante di Haṭha Yoga",
       "foto": "images/team/fabrizio_lauria.jpg",
-      "bio": "Da sempre curioso e appassionato di movimento funzionale e sport di resistenza, dopo una serie di esperienze multidisciplinari incontra lo yoga e realizza di aver trovato ciò che aveva a lungo cercato per intensità, progressione e benessere. Da allora la pratica quotidiana e personale si fonde con la formazione continua."
+      "bio": "Insegnante di Haṭha Yoga formatosi presso la scuola Svatantra darśana di Yoga Segrate (diploma 500 ore), proviene da un percorso multidisciplinare legato al movimento funzionale e allo sport di resistenza. Propone una pratica quotidiana focalizzata sull'Haṭha Yoga e sul Prāṇāyāma, intesa come uno strumento di progressione personale e di benessere per il corpo e per la mente."
     }
   ],
 
