@@ -1,6 +1,6 @@
 {
   "sezioni": [
-    { "id": "banner",    "visibile": true },
+    { "id": "banner",    "visibile": false },
     { "id": "hero",      "visibile": true },
     { "id": "mission",   "visibile": true },
     { "id": "atmosfera", "visibile": true },
